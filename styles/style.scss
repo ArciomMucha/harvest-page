@@ -1,0 +1,345 @@
+@import url(https://fonts.googleapis.com/css?family=Manrope:200,300,regular,500,600,700,800);
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+    padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+
+
+// Переменные
+$header-bg: #fff;
+$dropdown-bg: #fff;
+$text-color: #333;
+$hover-color: #007bff;
+$shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+$transition: all 0.3s ease;
+
+body {
+    font-family: 'Manrope', sans-serif;
+}
+
+// Стили для шапки
+header {
+    display: flex;
+
+    .header-link {
+        display: flex;
+        align-items: center;
+        padding: 0px 15px;
+
+        img {
+            width: 128px;
+            height: 128px;
+
+        }
+    }
+
+    .header-list {
+        display: flex;
+        align-items: center;
+
+
+        ul {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+                position: relative;
+                margin-right: 20px;
+
+                a {
+                    text-decoration: none;
+                    color: $text-color;
+                    display: block;
+                    padding: 10px 15px;
+                    transition: $transition;
+
+                    &:hover {
+                        color: $hover-color;
+                    }
+                }
+
+                // Стили для выпадающего меню
+                &.dropdown {
+                    >a::after {
+                        content: "▼";
+                        font-size: 0.6em;
+                        margin-left: 5px;
+                    }
+
+                    .dropdown-menu {
+                        display: none;
+                        position: absolute;
+                        top: 100%;
+                        left: 0;
+                        background: $dropdown-bg;
+                        min-width: 150px;
+                        box-shadow: $shadow;
+                        padding: 10px 0;
+                        z-index: 100;
+                        opacity: 0;
+                        transform: translateY(-10px);
+                        transition: $transition;
+
+                        li {
+                            margin: 0;
+                            padding: 0;
+
+                            a {
+                                padding: 8px 15px;
+                                color: $text-color;
+
+                                &:hover {
+                                    background: darken($dropdown-bg, 5%);
+                                }
+                            }
+                        }
+                    }
+
+                    &:hover {
+                        .dropdown-menu {
+                            display: block;
+                            opacity: 1;
+                            transform: translateY(0);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .header-address-phone {
+        display: flex;
+        margin: 0 50px 0 auto;
+        align-items: center;
+
+        a {
+            text-decoration: none;
+            color: $text-color;
+            margin-right: 20px;
+            transition: $transition;
+
+            &:hover {
+                color: $hover-color;
+            }
+
+            &:hover {
+                color: $hover-color;
+            }
+        }
+    }
+}
+
+.hero-section {
+    width: 100%;
+    height: 100vh;
+    background-image: url('/assets/herobackground.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+
+    .veloretti-business {
+        text-transform: uppercase;
+        margin-left: 50px;
+    }
+
+    .bike-lease {
+        text-transform: capitalize;
+        margin-left: 50px;
+        font-size: 70px;
+
+        span {
+            transition: color ease-in-out 0.5s;
+
+            &:hover {
+                color: rgb(203, 18, 18);
+            }
+        }
+    }
+}
+
+.bike-section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .bike-section-menu {
+
+        border-radius: 8px;
+        box-shadow: 0px 0px 13px 5px rgba(34, 60, 80, 0.2);
+        display: flex;
+        flex-direction: column;
+        width: 700px;
+        height: 700px;
+
+        .name-and-price-container {
+            display: flex;
+            justify-content: space-between;
+            margin: 50px 30px;
+
+            #bikeName {
+                font-weight: 600;
+                font-size: 25px;
+            }
+
+            #bikePrice {
+                font-size: 25px;
+            }
+        }
+
+
+
+        .gallery {
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .bike-image-container {
+                position: relative;
+                width: 420px;
+                height: 420px;
+                overflow: hidden;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                img {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                    transition: transform 0.5s cubic-bezier(.77, 0, .18, 1), opacity 0.3s;
+                    opacity: 1;
+                    z-index: 1;
+                }
+
+                img.next,
+                img.prev {
+                    z-index: 2;
+                }
+            }
+
+            .image-button {
+
+                margin: 0 auto;
+
+                .arrow-button {
+
+                    width: 40px;
+                    height: 40px;
+                    background-image: url('/assets/arrow-left-short.svg');
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-color: transparent;
+                    border: none;
+                    border-radius: 50%;
+                    cursor: pointer;
+                    transition: $transition;
+
+                    &.right {
+                        transform: rotate(180deg);
+                    }
+
+                    &:hover {
+                        background-color: #e0e0e0;
+                    }
+                }
+
+            }
+        }
+
+        .bike-dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .dot {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin: 0 8px;
+            background: none;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: border 0.2s;
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            padding: 3px;
+            box-sizing: border-box;
+        }
+        .dot-bg {
+            position: absolute;
+            top: 3px; left: 3px; right: 3px; bottom: 3px;
+            border-radius: 50%;
+            width: calc(100% - 6px);
+            height: calc(100% - 6px);
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .dot-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            display: block;
+        }
+        .dot.active {
+            border: 2px solid #333;
+        }
+    }
+}

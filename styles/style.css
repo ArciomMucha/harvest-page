@@ -1,0 +1,290 @@
+@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Manrope:200,300,regular,500,600,700,800);
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+}
+
+header {
+  display: flex;
+}
+header .header-link {
+  display: flex;
+  align-items: center;
+  padding: 0px 15px;
+}
+header .header-link img {
+  width: 128px;
+  height: 128px;
+}
+header .header-list {
+  display: flex;
+  align-items: center;
+}
+header .header-list ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+header .header-list ul li {
+  position: relative;
+  margin-right: 20px;
+}
+header .header-list ul li a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+  padding: 10px 15px;
+  transition: all 0.3s ease;
+}
+header .header-list ul li a:hover {
+  color: #007bff;
+}
+header .header-list ul li.dropdown > a::after {
+  content: "▼";
+  font-size: 0.6em;
+  margin-left: 5px;
+}
+header .header-list ul li.dropdown .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  min-width: 150px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  padding: 10px 0;
+  z-index: 100;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+header .header-list ul li.dropdown .dropdown-menu li {
+  margin: 0;
+  padding: 0;
+}
+header .header-list ul li.dropdown .dropdown-menu li a {
+  padding: 8px 15px;
+  color: #333;
+}
+header .header-list ul li.dropdown .dropdown-menu li a:hover {
+  background: #f2f2f2;
+}
+header .header-list ul li.dropdown:hover .dropdown-menu {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+header .header-address-phone {
+  display: flex;
+  margin: 0 50px 0 auto;
+  align-items: center;
+}
+header .header-address-phone a {
+  text-decoration: none;
+  color: #333;
+  margin-right: 20px;
+  transition: all 0.3s ease;
+}
+header .header-address-phone a:hover {
+  color: #007bff;
+}
+header .header-address-phone a:hover {
+  color: #007bff;
+}
+
+.hero-section {
+  width: 100%;
+  height: 100vh;
+  background-image: url("/assets/herobackground.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+}
+.hero-section .veloretti-business {
+  text-transform: uppercase;
+  margin-left: 50px;
+}
+.hero-section .bike-lease {
+  text-transform: capitalize;
+  margin-left: 50px;
+  font-size: 70px;
+}
+.hero-section .bike-lease span {
+  transition: color ease-in-out 0.5s;
+}
+.hero-section .bike-lease span:hover {
+  color: rgb(203, 18, 18);
+}
+
+.bike-section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bike-section .bike-section-menu {
+  border-radius: 8px;
+  box-shadow: 0px 0px 13px 5px rgba(34, 60, 80, 0.2);
+  display: flex;
+  flex-direction: column;
+  width: 700px;
+  height: 700px;
+}
+.bike-section .bike-section-menu .name-and-price-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 50px 30px;
+}
+.bike-section .bike-section-menu .name-and-price-container #bikeName {
+  font-weight: 600;
+  font-size: 25px;
+}
+.bike-section .bike-section-menu .name-and-price-container #bikePrice {
+  font-size: 25px;
+}
+.bike-section .bike-section-menu .gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bike-section .bike-section-menu .gallery .bike-image-container {
+  position: relative;
+  width: 420px;
+  height: 420px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bike-section .bike-section-menu .gallery .bike-image-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  transition: transform 0.5s cubic-bezier(0.77, 0, 0.18, 1), opacity 0.3s;
+  opacity: 1;
+  z-index: 1;
+}
+.bike-section .bike-section-menu .gallery .bike-image-container img.next,
+.bike-section .bike-section-menu .gallery .bike-image-container img.prev {
+  z-index: 2;
+}
+.bike-section .bike-section-menu .gallery .image-button {
+  margin: 0 auto;
+}
+.bike-section .bike-section-menu .gallery .image-button .arrow-button {
+  width: 40px;
+  height: 40px;
+  background-image: url("/assets/arrow-left-short.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.bike-section .bike-section-menu .gallery .image-button .arrow-button.right {
+  transform: rotate(180deg);
+}
+.bike-section .bike-section-menu .gallery .image-button .arrow-button:hover {
+  background-color: #e0e0e0;
+}
+.bike-section .bike-section-menu .bike-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.bike-section .bike-section-menu .dot {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 0 8px;
+  background: none;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border 0.2s;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  padding: 3px;
+  box-sizing: border-box;
+}
+.bike-section .bike-section-menu .dot-bg {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  right: 3px;
+  bottom: 3px;
+  border-radius: 50%;
+  width: calc(100% - 6px);
+  height: calc(100% - 6px);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bike-section .bike-section-menu .dot-bg img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+.bike-section .bike-section-menu .dot.active {
+  border: 2px solid #333;
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,30 @@
+[
+    {
+       "image": "./assets/bikes/velosiped-harvest-crop-black.jpg",
+       "name": "Harvest Crop Black",
+       "category": "Bike",
+       "color": "./assets/bikes/miniatures/black.png",
+       "price": 1429.99
+    },
+    {
+       "image": "./assets/bikes/velosiped-harvest-crop-cement-grey.jpg",
+       "name": "Harvest Crop Cement Grey",
+       "category": "Bike",
+       "color": "./assets/bikes/miniatures/cement_grey.png",
+       "price": 1429.99
+    },
+    {
+       "image": "./assets/bikes/velosiped-harvest-crop-glossy-red.jpg",
+       "name": "Harvest Crop Glossy Red",
+       "category": "Bike",
+       "color": "./assets/bikes/miniatures/glossy_red.png",
+       "price": 1429.99
+    },
+    {
+       "image": "./assets/bikes/velosiped-harvest-crop-limited-edition.jpg",
+       "name": "Harvest Crop Limited Edition",
+       "category": "Bike",
+       "color": "./assets/bikes/miniatures/limited.png",
+       "price": 1529.99
+    }
+]

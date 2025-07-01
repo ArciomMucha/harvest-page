@@ -89,7 +89,7 @@ function slideTo(newIndex, direction) {
 
 function updateNameAndPrice(index) {
     document.getElementById('bikeName').textContent = bikes[index].name;
-    document.getElementById('bikePrice').textContent = bikes[index].price + ' ₽';
+    document.getElementById('bikePrice').textContent = bikes[index].price + ' BYN';
 }
 function updateDots(index) {
     document.querySelectorAll('.dot').forEach((dot, i) => {
